@@ -11,7 +11,7 @@
 ### 块状元素
 ### display:block/table
 ### 独占一行
-### div h1-h6 ul p table...
+### div h1 h2 ul p table...
 
 ### 内联元素
 ### display:inline/inline-block

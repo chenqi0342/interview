@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(name,number){
+                //this当前正在构建的实例
+                this.name =name
+                this.number= number
+                //this.gender = 'male'
+            }
+            sayHi(){
+                console.log(
+                    `姓名${this.name},学号${this.number}`
+                )
+            }
+        }
+
+        //通过类new对象/实例
+        const a = new Student('xx',100)
+        console.log(a.name,a.number)
+        a.sayHi()
+
+        //判断数组 [] instanceof Array //true
+    </script>
+</body>
+</html>

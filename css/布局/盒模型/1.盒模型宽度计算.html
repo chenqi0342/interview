@@ -11,14 +11,18 @@
 				padding: 10px;
 				border: 1px solid #ccc;
 				margin: 10px;
+                box-sizing: border-box;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="div1">this is div</div>
 		<script>
-            console.log(document.getElementById('div1').width)
-			console.log(document.getElementById('div1').offsetWidth)
+            //offsetWidth = width + padding*2 + border*2 
+			// console.log(document.getElementById('div1').offsetWidth)//122
+
+            //box-sizing: border-box;
+            console.log(document.getElementById('div1').offsetWidth)//100
 		</script>
 	</body>
 </html>

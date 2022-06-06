@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>圣杯布局</title>
+		<style type="text/css">
+			body {
+				min-width: 550px;
+			}
+			#header {
+				text-align: center;
+				background-color: #f1f1f1;
+			}
+			#container {
+				padding-left: 200px;
+				padding-right: 150px;
+			}
+			/* 浮动布局 */
+			#container .column {
+				float: left;
+			}
+            #center {
+				background-color: #ccc;
+				width: 100%;
+			}
+			#left {
+                /* 相对于自身移动 */
+                position: relative;
+				background-color: yellow;
+				width: 200px;
+				/* 此时通过margin负值和中间重叠 */
+				margin-left: -100%;
+                right: 200px;
+			}
+			#right {
+				background-color: red;
+				width: 150px;
+				/* 通过margin负值和中间重叠 */
+                /* 设置margin-right自身没有宽度，有宽度会浮动下来*/
+                /* <!-- margin-right负值，右侧元素左移，自身不受影响 --> */
+				margin-right: -150px;
+			}
+			#footer {
+				/* 清除浮动 */
+				/* clear: both; */
+				text-align: center;
+				background-color: #f1f1f1;
+			}
+
+            /* 手写clearfix */
+            .clearfix:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+            .clearfix {
+                /* 兼容IE低版本 */
+                *zoom: 1;
+            }
+		</style>
+	</head>
+	<body>
+		<!-- 三栏布局，中间先加载 -->
+		<!-- float布局 -->
+		<!-- 两侧使用margin负值，和中间水平重叠 -->
+		<!-- 防止中间被两侧覆盖，用padding -->
+		<div id="header">this is header</div>
+        <!-- 使用padding,防止中间被覆盖-->
+		<div id="container" class="clearfix">
+            <!-- width:100% -->
+			<div id="center" class="column">this is center</div>
+			<div id="left" class="column">this is left</div>
+			<div id="right" class="column">this is right</div>
+		</div>
+		<div id="footer">this is footer</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin重叠</title>
+    <style>
+        p {
+            font-size: 16px;
+            line-height: 1;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 相邻元素的margin-top和margin-bottom会发生重叠 -->
+    <!-- 空内容的也会重叠 -->
+    <!-- AAA BBB直接的距离 -->
+    <!-- 15px -->
+    <!-- 解决方案BFC -->
+    <p>AAA</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>BBB</p>
+</body>
+</html>

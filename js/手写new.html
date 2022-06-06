@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new</title>
+</head>
+<body>
+    <script>
+        const ObjectFactory=(...args)=>{
+            //...args的第一个值是constructor
+            //1创建新对象
+            let obj = {}
+            //获取构造函数
+            const Constructor = [].shift.call(args)
+            //对象的原型链指向构造函数的原型
+            obj._proto_ =Constructor.prototype
+            //执行构造函数
+            const ret = Constructor.apply()
+            //构造函数中如果有返回值，实例化对象就是这个返回值 
+            return typeof ret === 'object'? ret:obj
+        }
+        ObjectFactory()
+    </script>
+</body>
+</html>
