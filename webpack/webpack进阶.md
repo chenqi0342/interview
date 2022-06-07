@@ -43,6 +43,9 @@
 ###    alert(desc())
 ###  })
 
+### 排除依赖(externals)
+### 一般来说，一些成熟的第三方库，是不需要打包的，例如jquery
+### externals: { jquery: 'jQuery' },
 ## 源码分割（Source Map）
 ### 是一种源代码与构建后代码之间的映射技术
 ### 通过.map文件，将构建后的代码与源代码之间建立映射关系
@@ -98,6 +101,3 @@
 ### alias:{'@‘:resolve(’src')}
 ### extensions:引入模块时，可以省略那些后缀
 
-### 排除依赖(externals)
-### 一般来说，一些成熟的第三方库，是不需要打包的，例如jquery
-### externals: { jquery: 'jQuery' },
